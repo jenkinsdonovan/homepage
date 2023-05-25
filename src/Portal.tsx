@@ -11,7 +11,7 @@ function Portal() {
       </Link>
       <h1>Space Hash Records</h1>
       <p className="subtitle">
-        Pushing boundaries since 2023
+        The best programmer in the world!
       </p>
     </>
   )
