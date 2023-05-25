@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
 import logo from './assets/logo.svg'
 import "./Portal.css"
+import React from 'react';
 
 function Portal() {
   return (

@@ -7,6 +7,7 @@ import {
 
 import Portal from "./Portal";
 import Landing from "./Landing";
+import React from "react";
 
 function App() {
   return (

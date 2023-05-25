@@ -1,4 +1,5 @@
 import ConstructionIcon from '@mui/icons-material/Construction';
+import React from 'react';
 
 function Landing() {
   return (
