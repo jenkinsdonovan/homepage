@@ -30,11 +30,15 @@ jobs:
         uses: actions/checkout@v3
       - name: Setup Pages
         uses: actions/configure-pages@v3
-      - name: Build with Jekyll
-        uses: actions/jekyll-build-pages@v1
-        with:
-          source: ./docs
-          destination: ./_site
+      - name: NPM install
+        uses: dudeofawesome/npm-install@v1.0.0
+      - name: chimpwizards-npm-build
+        uses: chimpwizards-pipeline/npm-build@v1.0.7
+      #- name: Build with Jekyll
+      #  uses: actions/jekyll-build-pages@v1
+      #  with:
+      #    source: ./docs
+      #    destination: ./_site
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
 
