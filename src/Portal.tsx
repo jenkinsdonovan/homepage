@@ -9,6 +9,7 @@ import { animated, useSpring } from '@react-spring/web'
 function Portal() {
   const [isVisible, setIsVisible] = useState(true);
 
+  // sink fade out effect 
   const styles = useSpring({
     opacity: isVisible ? 1 : .1,
     y: isVisible ? 0 : 24,
