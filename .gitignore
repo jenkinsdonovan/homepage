@@ -10,7 +10,7 @@ lerna-debug.log*
 node_modules
 
 # Don't ignore dist because github serves it
-dist
+#dist
 #dist-ssr
 *.local
 
