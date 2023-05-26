@@ -7,7 +7,7 @@ import Avatar from '@mui/material/Avatar'
 import { AvatarGroup, Tooltip } from '@mui/material';
 
 import logo from './assets/logo.svg'
-import donnie from './roster/donnie.jpeg'
+import donnie from './assets/donnie.jpeg'
 
 const data = [
   {
