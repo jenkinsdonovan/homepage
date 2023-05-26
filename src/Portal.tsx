@@ -8,6 +8,13 @@ import { AvatarGroup, Tooltip } from '@mui/material';
 
 import logo from './assets/logo.svg'
 import donnie from './assets/donnie.jpeg'
+import skrillex from './assets/skrillex.jpeg'
+import flume from './assets/flume.jpeg'
+import fredagain from './assets/fredagain.jpeg'
+import odesza from './assets/odesza.jpeg'
+import aurora from './assets/aurora.jpeg'
+import doja from './assets/dojacat.jpeg'
+import flylo from './assets/flylo.webp'
 
 const data = [
   {
@@ -16,31 +23,31 @@ const data = [
   },
   {
     name: "skrillex",
-    path: "/roster/skrillex.jpeg"
+    path: skrillex
   },
   {
     name: "flume",
-    path: "/roster/flume.jpeg"
+    path: flume
   },
   {
     name: "fred again...",
-    path: "/roster/fredagain.jpeg"
+    path: fredagain
   },
   {
     name: "odesza",
-    path: "/roster/odesza.jpeg"
+    path: odesza
   },
   {
     name: "aurora",
-    path: "/roster/aurora.jpeg"
+    path: aurora
   },
   {
     name: "doja cat",
-    path: "/roster/dojacat.jpeg"
+    path: doja
   },
   {
     name: "flying lotus",
-    path: "/roster/flylo.webp"
+    path: flylo
   },
 ]
 
