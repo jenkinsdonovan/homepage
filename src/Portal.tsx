@@ -1,5 +1,4 @@
 import { Link } from 'react-router-dom'
-import logo from './assets/logo.svg'
 import "./Portal.css"
 import React, { useState } from 'react';
 
@@ -7,10 +6,13 @@ import { animated, useSpring } from '@react-spring/web'
 import Avatar from '@mui/material/Avatar'
 import { AvatarGroup, Tooltip } from '@mui/material';
 
+import logo from './assets/logo.svg'
+import donnie from './roster/donnie.jpeg'
+
 const data = [
   {
     name: "donnie",
-    path: "/roster/donnie.jpeg"
+    path: donnie
   },
   {
     name: "skrillex",
