@@ -51,6 +51,7 @@ const data = [
   },
 ]
 
+// TODO: scale things better
 function Portal() {
   const [isVisible, setIsVisible] = useState(true);
 
@@ -85,7 +86,7 @@ function Portal() {
       </animated.div>
 
       {/* roster */}
-      <animated.div style={{...rosterStyles, width: "1500px"}}>
+      <animated.div style={{...rosterStyles, width: "100vw"}}>
         <AvatarGroup max={10} style={{ justifyContent: "center" }}>
           {data.map(item => (
             <Tooltip title={isVisible ? "" : item.name} key={item.name}>
