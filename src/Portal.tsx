@@ -6,48 +6,40 @@ import { animated, useSpring } from '@react-spring/web'
 import Avatar from '@mui/material/Avatar'
 import { AvatarGroup, Tooltip } from '@mui/material';
 
-import logo from './assets/logo.svg'
-import donnie from './assets/donnie.jpeg'
-import skrillex from './assets/skrillex.jpeg'
-import flume from './assets/flume.jpeg'
-import fredagain from './assets/fredagain.jpeg'
-import odesza from './assets/odesza.jpeg'
-import aurora from './assets/aurora.jpeg'
-import doja from './assets/dojacat.jpeg'
-import flylo from './assets/flylo.webp'
+import * as img from './thumbs';
 
 const data = [
   {
     name: "donnie",
-    path: donnie
+    path: img.donnie
   },
   {
     name: "skrillex",
-    path: skrillex
+    path: img.skrillex
   },
   {
     name: "flume",
-    path: flume
+    path: img.flume
   },
   {
     name: "fred again...",
-    path: fredagain
+    path: img.fredagain
   },
   {
     name: "odesza",
-    path: odesza
+    path: img.odesza
   },
   {
     name: "aurora",
-    path: aurora
+    path: img.aurora
   },
   {
     name: "doja cat",
-    path: doja
+    path: img.doja
   },
   {
     name: "flying lotus",
-    path: flylo
+    path: img.flylo
   },
 ]
 
@@ -72,11 +64,13 @@ function Portal() {
     y: !isVisible ? 0 : 24,
   })
 
+  console.log(data);
+
   return (
     <div>
       {/* logo */}
       <animated.div style={landerLogoStyles}>
-        <img src={logo} className="logo" alt="React logo" style={{ cursor: "grab" }} onClick={() => setIsVisible(!isVisible)}/>
+        <img src={img.logo} className="logo" alt="React logo" style={{ cursor: "grab" }} onClick={() => setIsVisible(!isVisible)}/>
       </animated.div>
 
       {/* summary */}
@@ -88,7 +82,7 @@ function Portal() {
       {/* roster */}
       <animated.div style={{...rosterStyles, width: "100vw"}}>
         <AvatarGroup max={10} style={{ justifyContent: "center" }}>
-          {data.map(item => (
+          {data.slice(0,3).map(item => (
             <Tooltip title={isVisible ? "" : item.name} key={item.name}>
               <Avatar 
                 alt={item.name}
