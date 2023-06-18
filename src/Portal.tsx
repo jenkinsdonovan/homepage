@@ -64,7 +64,30 @@ function Portal() {
     y: !isVisible ? 0 : 24,
   })
 
-  console.log(data);
+  // gets an entire roster as an array of avatargroups
+  const getRoster = () => {
+    let items: JSX.Element[] = [];
+
+    // get a group of 5
+    for(let i = 0; i < (data.length % 5) - 1; i++) {
+      items.push(getGroup(5 * i));
+    }
+
+    return items;
+  }
+
+  // get at most 5 roster members starting from an index
+  const getGroup = (start: number) => {
+    return (
+      <AvatarGroup max={10} style={{ justifyContent: "center" }}>
+        {data.slice(start,start + 5).map(item => (
+          <Tooltip title={isVisible ? "" : item.name} key={item.name}>
+            <Avatar  alt={item.name} src={item.path}  sx={{ width: 100, height: 100 }}/>
+          </Tooltip>
+        ))}
+      </AvatarGroup>
+    )
+  }
 
   return (
     <div>
@@ -81,20 +104,8 @@ function Portal() {
 
       {/* roster */}
       <animated.div style={{...rosterStyles, width: "100vw"}}>
-        <AvatarGroup max={10} style={{ justifyContent: "center" }}>
-          {data.slice(0,3).map(item => (
-            <Tooltip title={isVisible ? "" : item.name} key={item.name}>
-              <Avatar 
-                alt={item.name}
-                src={item.path} 
-                sx={{ width: 100, height: 100 }}
-              />
-            </Tooltip>
-          ))}
-        </AvatarGroup>
+        {getRoster()}
       </animated.div>
-
-      
     </div>
   )
 }
