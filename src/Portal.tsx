@@ -69,8 +69,8 @@ function Portal() {
     let items: JSX.Element[] = [];
 
     // get a group of 5
-    for(let i = 0; i < (data.length % 3) - 1; i++) {
-      items.push(getGroup(5 * i));
+    for(let i = 0; i < (data.length % 3) + 1; i++) {
+      items.push(getGroup(3 * i));
     }
 
     return items;
