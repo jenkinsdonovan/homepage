@@ -69,7 +69,7 @@ function Portal() {
     let items: JSX.Element[] = [];
 
     // get a group of 5
-    for(let i = 0; i < (data.length % 5) - 1; i++) {
+    for(let i = 0; i < (data.length % 3) - 1; i++) {
       items.push(getGroup(5 * i));
     }
 
@@ -80,7 +80,7 @@ function Portal() {
   const getGroup = (start: number) => {
     return (
       <AvatarGroup max={10} style={{ justifyContent: "center" }}>
-        {data.slice(start,start + 5).map(item => (
+        {data.slice(start,start + 3).map(item => (
           <Tooltip title={isVisible ? "" : item.name} key={item.name}>
             <Avatar  alt={item.name} src={item.path}  sx={{ width: 100, height: 100 }}/>
           </Tooltip>
