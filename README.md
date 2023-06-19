@@ -8,7 +8,7 @@ All source code is located in the `src/` directory.
 
 ## Technology stack
 
-* Vite as the locakl development server
+* Vite as the local development server
 * React as the frontend Typescript library
 * Typescript 
 * Material UI as the CSS framework
