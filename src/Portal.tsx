@@ -89,13 +89,12 @@ function Portal() {
   // get at most 5 roster members starting from an index
   const getGroup = (start: number) => {
     return (
-      <AvatarGroup max={10} style={{ justifyContent: "center"}}>
+      <AvatarGroup max={10} style={{ justifyContent: "center"}} key={"group-" + start}>
         {data.slice(start,start + 3).map((item, i) => (
           <Tooltip title={isVisible ? "" : item.name} key={item.name}>
-            <Avatar alt={item.name} src={item.path} sx={{ width: 100, height: 100, cursor: "pointer" }} onClick={() => {
-              setActive(start + i);
-              setIsVisible(!isVisible);
-            }}/>
+            <Link to={"/bio/" + item.name}>
+              <Avatar alt={item.name} src={item.path} sx={{ width: 100, height: 100, cursor: "pointer" }}/>
+            </Link>
           </Tooltip>
         ))}
       </AvatarGroup>
@@ -105,34 +104,18 @@ function Portal() {
   return (
     <div>
       {/* logo */}
-      <animated.div style={landerLogoStyles}>
-        {active == -1 && 
-          <img src={img.logo} className="logo" alt="logo" style={{ cursor: "grab" }} onClick={() => setIsVisible(!isVisible)}/>
-        }
-        {active != -1 &&
-          <img src={data[active].path} className="artistLogo" alt={data[active].name} />
-        }
+      <animated.div style={{...landerLogoStyles}}>
+        <img src={img.logo} className="logo" alt="logo" style={{ cursor: "grab" }} onClick={() => setIsVisible(!isVisible)}/>
       </animated.div>
 
       {/* summary */}
-      <animated.div style={landerSummaryStyles}>
-        {active == -1 && 
-          <div>
-            <h1>Space Hash Records</h1>
-            <p className="subtitle">Pushing boundaries since 2023</p>
-          </div>
-        }
-        {active != -1 && 
-          <div>
-            <h1>{data[active].name}</h1>
-            <p className="subtitle">{data[active].bio}</p>
-            <Button onClick={() => setActive(-1)}><ArrowBackIcon/></Button>
-          </div>
-        }
+      <animated.div style={{...landerSummaryStyles, zIndex: 1, position: "absolute", left: 0, right: 0}}>
+        <h1>Space Hash Records</h1>
+        <p className="subtitle">Pushing boundaries since 2023</p>
       </animated.div>
 
       {/* roster */}
-      <animated.div style={{...rosterStyles, width: "100vw"}}>
+      <animated.div style={{...rosterStyles, width: "100vw", zIndex: 2, position: "absolute", left: 0, right: 0}}>
         {!isVisible && getRoster()}
       </animated.div>
     </div>

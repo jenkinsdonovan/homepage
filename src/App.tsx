@@ -1,7 +1,7 @@
 import { Routes, Route, HashRouter as Router} from "react-router-dom";
 
 import Portal from "./Portal";
-import Landing from "./Landing";
+import Bio from "./Bio";
 import React from "react";
 
 function App() {
@@ -9,7 +9,7 @@ function App() {
     <Router>
       <Routes>
         <Route path="/" element={<Portal /> } />
-        <Route path="/landing" element={<Landing /> } />
+        <Route path="/bio/:artist" element={<Bio /> } />
       </Routes>
     </Router>
   )
