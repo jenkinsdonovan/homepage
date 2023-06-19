@@ -1,44 +1,53 @@
 import { Link } from 'react-router-dom'
 import "./Portal.css"
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
 import { animated, useSpring } from '@react-spring/web'
 import Avatar from '@mui/material/Avatar'
-import { AvatarGroup, Tooltip } from '@mui/material';
+import { AvatarGroup, Button, Tooltip } from '@mui/material';
+import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 
 import * as img from './thumbs';
 
 const data = [
   {
-    name: "donnie",
+    name: "Donnie",
+    bio: "Donnie's bio",
     path: img.donnie
   },
   {
-    name: "skrillex",
+    name: "Skrillex",
+    bio: "Skrillex's bio",
     path: img.skrillex
   },
   {
-    name: "flume",
+    name: "Flume",
+    bio: "Flume's bio",
     path: img.flume
   },
   {
     name: "fred again...",
+    bio: "Fred Again's bio",
     path: img.fredagain
   },
   {
-    name: "odesza",
+    name: "Odesza",
+    bio: "Odesza's bio",
     path: img.odesza
   },
   {
-    name: "aurora",
+    name: "Aurora",
+    bio: "Aurora's bio",
     path: img.aurora
   },
   {
-    name: "doja cat",
+    name: "Doja Cat",
+    bio: "Doja Cat's bio",
     path: img.doja
   },
   {
-    name: "flying lotus",
+    name: "Flying Lotus",
+    bio: "Flying Lotus' bio",
     path: img.flylo
   },
 ]
@@ -46,22 +55,23 @@ const data = [
 // TODO: scale things better
 function Portal() {
   const [isVisible, setIsVisible] = useState(true);
+  const [active, setActive] = useState(-1);
 
   // fade effect for words
   const landerSummaryStyles = useSpring({
     opacity: isVisible ? 1 : .1,
-    y: isVisible ? 0 : 24,
+    y: isVisible ? 0 : -50,
   })
 
   // fade effect for logo
   const landerLogoStyles = useSpring({
-    y: isVisible ? 0 : 24,
+    y: isVisible ? 0 : -50,
   })
 
   // fade effect for roster
   const rosterStyles = useSpring({
     opacity: !isVisible ? 1 : 0,
-    y: !isVisible ? 0 : 24,
+    y: !isVisible ? 0 : -50,
   })
 
   // gets an entire roster as an array of avatargroups
@@ -79,10 +89,13 @@ function Portal() {
   // get at most 5 roster members starting from an index
   const getGroup = (start: number) => {
     return (
-      <AvatarGroup max={10} style={{ justifyContent: "center" }}>
-        {data.slice(start,start + 3).map(item => (
+      <AvatarGroup max={10} style={{ justifyContent: "center"}}>
+        {data.slice(start,start + 3).map((item, i) => (
           <Tooltip title={isVisible ? "" : item.name} key={item.name}>
-            <Avatar  alt={item.name} src={item.path}  sx={{ width: 100, height: 100 }}/>
+            <Avatar alt={item.name} src={item.path} sx={{ width: 100, height: 100, cursor: "pointer" }} onClick={() => {
+              setActive(start + i);
+              setIsVisible(!isVisible);
+            }}/>
           </Tooltip>
         ))}
       </AvatarGroup>
@@ -93,18 +106,34 @@ function Portal() {
     <div>
       {/* logo */}
       <animated.div style={landerLogoStyles}>
-        <img src={img.logo} className="logo" alt="React logo" style={{ cursor: "grab" }} onClick={() => setIsVisible(!isVisible)}/>
+        {active == -1 && 
+          <img src={img.logo} className="logo" alt="logo" style={{ cursor: "grab" }} onClick={() => setIsVisible(!isVisible)}/>
+        }
+        {active != -1 &&
+          <img src={data[active].path} className="artistLogo" alt={data[active].name} />
+        }
       </animated.div>
 
       {/* summary */}
       <animated.div style={landerSummaryStyles}>
-        <h1>Space Hash Records</h1>
-        <p className="subtitle">Pushing boundaries since 2023</p>
+        {active == -1 && 
+          <div>
+            <h1>Space Hash Records</h1>
+            <p className="subtitle">Pushing boundaries since 2023</p>
+          </div>
+        }
+        {active != -1 && 
+          <div>
+            <h1>{data[active].name}</h1>
+            <p className="subtitle">{data[active].bio}</p>
+            <Button onClick={() => setActive(-1)}><ArrowBackIcon/></Button>
+          </div>
+        }
       </animated.div>
 
       {/* roster */}
       <animated.div style={{...rosterStyles, width: "100vw"}}>
-        {getRoster()}
+        {!isVisible && getRoster()}
       </animated.div>
     </div>
   )
