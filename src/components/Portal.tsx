@@ -98,12 +98,12 @@ const Portal = () => {
 
 				{/*Heading*/}
 				<Grid item xs={12}>
-					<Typography variant="h1">Space Hash</Typography>
+					<Typography variant="h2">Space Hash</Typography>
 				</Grid>
 
 				{/*Subheading*/}
 				<Grid item xs={12}>
-					<Typography variant="h5">Pushing boundaries since 2024</Typography>
+					<Typography variant="subtitle1">Pushing boundaries since 2024</Typography>
 				</Grid>
 
 				{/*Roster*/}
