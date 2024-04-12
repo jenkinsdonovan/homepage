@@ -10,7 +10,6 @@ import {Link} from "react-router-dom";
 import Avatar from "@mui/material/Avatar";
 
 import logo from "../assets/logo.svg"
-import "../css/starfield.css"
 
 import donnie from "../assets/donnie.jpeg"
 import skrillex from "../assets/skrillex.jpeg"
@@ -91,25 +90,6 @@ const Portal = () => {
 	return (
 		// TODO: A lot of effort just to center lol
 		<Box display="flex" justifyContent="center" alignItems="center" minHeight="100vh" overflow="hidden">
-
-			{/*Silly lil starfield background*/}
-			<div className="star-field1">
-				<div className="layer"></div>
-				<div className="layer"></div>
-				<div className="layer"></div>
-				<div className="layer"></div>
-				<div className="layer"></div>
-				<div className="layer"></div>
-			</div>
-			<div className="star-field2">
-				<div className="layer"></div>
-				<div className="layer"></div>
-				<div className="layer"></div>
-				<div className="layer"></div>
-				<div className="layer"></div>
-				<div className="layer"></div>
-			</div>
-
 			<Grid container alignItems="center" justifyContent="center" direction="column" position="relative">
 				{/*Logo*/}
 				<Grid item xs={12} alignItems="center">
