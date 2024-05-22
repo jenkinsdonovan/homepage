@@ -10,51 +10,14 @@ import {Link} from "react-router-dom";
 import Avatar from "@mui/material/Avatar";
 
 import logo from "../assets/logo.svg"
-
 import donnie from "../assets/donnie.jpeg"
-import skrillex from "../assets/skrillex.jpeg"
-import flume from "../assets/flume.jpeg"
-import fredagain from "../assets/fredagain.jpeg"
-import odesza from "../assets/odesza.jpeg"
-import aurora from "../assets/aurora.jpeg"
-import doja from "../assets/dojacat.jpeg"
 
 const data = [
 	{
 		name: "Donnie",
 		bio: "Donnie's bio",
 		path: donnie
-	},
-	{
-		name: "Skrillex",
-		bio: "Skrillex's bio",
-		path: skrillex
-	},
-	{
-		name: "Flume",
-		bio: "Flume's bio",
-		path: flume
-	},
-	{
-		name: "fred again...",
-		bio: "Fred Again's bio",
-		path: fredagain
-	},
-	{
-		name: "Odesza",
-		bio: "Odesza's bio",
-		path: odesza
-	},
-	{
-		name: "Aurora",
-		bio: "Aurora's bio",
-		path: aurora
-	},
-	{
-		name: "Doja Cat",
-		bio: "Doja Cat's bio",
-		path: doja
-	},
+	}
 ]
 
 const Portal = () => {
