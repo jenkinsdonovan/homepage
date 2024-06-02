@@ -4,7 +4,6 @@ import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import IconButton from '@mui/material/IconButton';
-import MenuIcon from '@mui/icons-material/Menu';
 import Drawer from '@mui/material/Drawer';
 import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
@@ -34,7 +33,7 @@ const Header = () => {
 			<AppBar position="static" className={styles.header}>
 				<Toolbar>
 					<IconButton edge="start" color="inherit" aria-label="menu" onClick={toggleDrawer(true)}>
-						<MenuIcon />
+						#
 					</IconButton>
 					<Typography variant="h6" component="div" sx={{ flexGrow: 1, mt: 0.5 }}>
 						Space Hash Records
