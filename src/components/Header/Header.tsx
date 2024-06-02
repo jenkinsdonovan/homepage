@@ -11,6 +11,7 @@ import ListItem from '@mui/material/ListItem';
 import ListItemText from '@mui/material/ListItemText';
 import CloseIcon from '@mui/icons-material/Close';
 import styles from './Header.module.css';
+import {Link} from "react-router-dom";
 
 const Header = () => {
 	const [drawerOpen, setDrawerOpen] = useState(false);
@@ -40,7 +41,7 @@ const Header = () => {
 					</Typography>
 					<div className={styles.desktopMenu}>
 						{menuItems.map((item) => (
-							<Button key={item.text} color="inherit" href={item.href}>
+							<Button key={item.text} color="inherit" component={Link} to={item.href}>
 								{item.text}
 							</Button>
 						))}
@@ -55,8 +56,10 @@ const Header = () => {
 				</div>
 				<List>
 					{menuItems.map((item) => (
-						<ListItem key={item.text} component="a" href={item.href}>
-							<ListItemText primary={item.text} />
+						<ListItem key={item.text}>
+							<Link to={item.href} style={{ textDecoration: "none", color: "white"}} >
+								<ListItemText primary={item.text} />
+							</Link>
 						</ListItem>
 					))}
 				</List>
