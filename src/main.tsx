@@ -1,8 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import {ThemeProvider, CssBaseline, createTheme} from "@mui/material";
-
-import App from "./components/App.tsx";
+import App from "./App.tsx";
 
 const theme = createTheme({
   palette: {
@@ -23,7 +22,7 @@ ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
     <ThemeProvider theme={theme}>
       <CssBaseline />
-      <App/>
+      <App />
     </ThemeProvider>
   </React.StrictMode>,
 )

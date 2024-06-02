@@ -1,0 +1,19 @@
+.header {
+    background-color: #333;
+}
+
+.desktopMenu {
+    display: none;
+}
+
+.drawerHeader {
+    display: flex;
+    justify-content: flex-end;
+    padding: 50px;
+}
+
+@media (min-width: 768px) {
+    .desktopMenu {
+        display: flex;
+    }
+}
