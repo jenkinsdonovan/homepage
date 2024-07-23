@@ -1,0 +1,13 @@
+.container {
+    height: 100vh;
+}
+
+.center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.active {
+    text-shadow: -3px 3px 8px pink;
+}

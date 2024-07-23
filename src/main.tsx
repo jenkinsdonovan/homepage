@@ -1,24 +1,59 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import {ThemeProvider, CssBaseline, createTheme} from "@mui/material";
-import App from "./App.tsx";
+import App from './App.tsx'
+import {createTheme, CssBaseline, responsiveFontSizes, ThemeProvider} from "@mui/material";
 
-const theme = createTheme({
+let theme = createTheme({
+  // Default coloring
   palette: {
-    mode: 'dark',
     background: {
-      default: "#202020"
+      default: "#191B29",
+      paper: "#171824"
+    },
+    text: {
+      primary: "#ffffff"
     },
     primary: {
-      main: '#902D9C',
-    },
-    secondary: {
-      main: '#389c2d',
-    },
+      main: "#202020",
+    }
   },
+
+
 });
 
-ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
+theme = responsiveFontSizes(theme);
+
+theme.components = {
+  // Default styling
+  MuiCard: {
+    defaultProps: {
+      // I always want cards to be raised
+      raised: false
+    },
+    styleOverrides: {
+      // Responsive width
+      root: {
+        height: '90%',
+        width: '75%',
+        textAlign: 'center',
+        [theme.breakpoints.up('sm')]: {
+          width: '60%',
+        },
+        [theme.breakpoints.up('md')]: {
+          width: '50%',
+        },
+        [theme.breakpoints.up('lg')]: {
+          width: '50%',
+        },
+        [theme.breakpoints.up('xl')]: {
+          width: '30%',
+        },
+      },
+    },
+  }
+}
+
+ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
     <ThemeProvider theme={theme}>
       <CssBaseline />

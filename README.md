@@ -1,25 +1,30 @@
-# spacehash.github.io
+# React + TypeScript + Vite
 
-The purpose of this repository is to house the Spacehash label homepage's source code. This code is responsible for providing users with information on both the label itself, and the label's roster. 
+This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-## Repository layout
+Currently, two official plugins are available:
 
-All source code is located in the `src/` directory. 
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-## Technology stack
+## Expanding the ESLint configuration
 
-* Vite as the local development server
-* React as the frontend Typescript library
-* Typescript 
-* Material UI as the CSS framework
+If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
 
-## Development Instructions
+- Configure the top-level `parserOptions` property like this:
 
-* Run `npm i` the first time you clone the repo.
-* To run the vite development server, run `npm run dev`. 
+```js
+export default {
+  // other rules...
+  parserOptions: {
+    ecmaVersion: 'latest',
+    sourceType: 'module',
+    project: ['./tsconfig.json', './tsconfig.node.json'],
+    tsconfigRootDir: __dirname,
+  },
+}
+```
 
-## Goals
-
-- [ ] Show a roster of everyone signed to the label
-- [ ] Clicking on a roster member takes you to that member's biography
-- [ ] Member biography also contains links to all of their social media platforms
+- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
+- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
+- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
