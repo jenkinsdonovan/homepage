@@ -4,7 +4,7 @@
  * TODO: better keyboard nav
  */
 
-import {Backdrop, Box, Card, ClickAwayListener, Grid, Grow, Modal, styled, Typography, Zoom} from "@mui/material";
+import {Box, Card, Grid, Modal, Typography, Zoom} from "@mui/material";
 import clsx from "clsx";
 import "./App.css";
 import {useEffect, useState} from "react";
@@ -16,10 +16,6 @@ function App() {
   useEffect(() => {
     console.log(active);
   }, [active])
-
-  const handleClickAway = (focus: string) => {
-    if (active == focus) setActive("");
-  }
 
   return (
     <Box className={clsx("container center")}>
@@ -64,7 +60,7 @@ function App() {
         }}
       >
         <Zoom in={active !== ""}>
-          <Card width={"80vw"}>
+          <Card>
             <Typography variant={"h5"}>{ active }</Typography>
           </Card>
         </Zoom>
