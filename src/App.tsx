@@ -22,29 +22,29 @@ function App() {
       <Grid container spacing={2}  sx={{width: "100vw", height: "70vh"}}>
 
         {/*EVENTs*/}
-        <Grid item className={ active == "events" ? "active" : ""} xs={6} display={"flex"} justifyContent={"right"}>
-            <Card raised={active == "events"} onClick={() => setActive("events")} tabIndex={0}>
+        <Grid item xs={6} display={"flex"} justifyContent={"right"}>
+            <Card className={"item"} onClick={() => setActive("events")} tabIndex={0}>
               <Typography variant={"h5"} padding={"10px"}>Events</Typography>
             </Card>
         </Grid>
 
         {/*DEV*/}
-        <Grid item className={ active == "development" ? "active" : ""} xs={6} display={"flex"} justifyContent={"left"}>
-            <Card raised={active == "development"} onClick={() => setActive("development")} tabIndex={0}>
+        <Grid item xs={6} display={"flex"} justifyContent={"left"}>
+            <Card className={"item"} onClick={() => setActive("development")} tabIndex={0}>
               <Typography variant={"h5"} padding={"10px"}>Development</Typography>
             </Card>
         </Grid>
 
         {/*ABOUT*/}
-        <Grid item className={ active == "about" ? "active": ""} xs={6} display={"flex"} justifyContent={"right"}>
-            <Card raised={active == "about"} onClick={() => setActive("about")} tabIndex={0}>
+        <Grid item xs={6} display={"flex"} justifyContent={"right"}>
+            <Card className={"item"} onClick={() => setActive("about")} tabIndex={0}>
               <Typography variant={"h5"} padding={"10px"}>About</Typography>
             </Card>
         </Grid>
 
         {/*CONTACT*/}
-        <Grid item className={ active == "contact" ? "active" : ""} xs={6} display={"flex"} justifyContent={"left"}>
-            <Card raised={active == "contact"} onClick={() => setActive("contact")} tabIndex={0}>
+        <Grid item xs={6} display={"flex"} justifyContent={"left"}>
+            <Card className={"item"} onClick={() => setActive("contact")} tabIndex={0}>
               <Typography variant={"h5"} padding={"10px"}>Contact</Typography>
             </Card>
         </Grid>

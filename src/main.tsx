@@ -43,7 +43,7 @@ theme.components = {
           width: '50%',
         },
         [theme.breakpoints.up('lg')]: {
-          width: '50%',
+          width: '30%',
         },
         [theme.breakpoints.up('xl')]: {
           width: '30%',
